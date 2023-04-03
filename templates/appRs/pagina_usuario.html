@@ -1,0 +1,35 @@
+
+
+<link rel="stylesheet" href="/static/css/perfil.css">
+
+<div class="nav-container">
+    <nav id="nav-principal"> 
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'perfil' %}">Perfil</a></li> 
+      <li><a href="{% url 'crear_publicacion' %}">Crear Publicacion</a></li>
+      <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesion</a></li>
+    </nav>
+  </div>
+
+  <div class="usuario-header">
+    <h1>{{ usuario.username }}</h1>
+    <h2>Mis publicaciones</h2>
+  </div>
+  
+  <div class="publicaciones-container"> 
+      {% if publicaciones %}
+      <ul class="publicaciones-list">
+      {% for publicacion in publicaciones %}
+          <form class="publicacion-form" action="{% url 'eliminar_publicacion' publicacion.id %}">
+          {% csrf_token %}
+          <li class="publicacion-item"><img src={{ publicacion.imagen.url }} alt={{ publicacion.descripcion }} class="publicacion-imagen" > - {{ publicacion.fecha }}</li>
+          <input type="submit" class="eliminar-btn" value="Eliminar Publicacion">
+          </form>
+      {% endfor %}
+      </ul>
+      {% else %}
+      <p class="sin-publicaciones">No has publicado nada aún.</p>
+      {% endif %}
+  </div>
+  
+

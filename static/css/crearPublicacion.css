@@ -1,0 +1,88 @@
+li {
+    list-style: none;
+  }
+   
+
+.nav-container #nav-principal {
+    background-color: #3c54a4;
+    overflow: hidden;
+  }
+  
+  .nav-container #nav-principal li {
+    
+    float: left;
+  }
+  
+  .nav-container #nav-principal li a {
+    
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .nav-container #nav-principal li a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* codigo del resto */
+
+  .title-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .message-container {
+    margin-bottom: 20px;
+  }
+  
+  .message-container .messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form-container input[type="text"], .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-container input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .form-container .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container .submit-button:hover {
+    background-color: #0062cc;
+  }
+  

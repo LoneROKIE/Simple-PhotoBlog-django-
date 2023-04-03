@@ -1,0 +1,12 @@
+{% autoescape off %}
+
+Bienvenido a la aplicacion !!!
+
+Hola {{user.username}} !!!.
+
+Porfavor confirma tu email dandole click al siguiente enlace:
+
+link de confirmacion: http://{{domain}}{% url 'activar_cuenta' uidb64=uid token=token %}
+
+
+{% endautoescape %}

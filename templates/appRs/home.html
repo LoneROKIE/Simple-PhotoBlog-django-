@@ -1,0 +1,45 @@
+{% block contents %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/homeEstilo.css">
+
+    <title>Home</title>
+</head>
+
+<body>
+<div class="nav-container">
+  <nav id="nav-principal"> 
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'perfil' %}">Perfil</a></li> 
+    <li><a href="{% url 'crear_publicacion' %}">Crear Publicacion</a></li>
+    <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesion</a></li>
+  </nav>
+</div>
+
+
+
+<div class="container">
+    <h1>Bienvenido al blog de imagenes mas bueno y simple del mundo xd !!!!!!!</h1>
+    <p> Este es un blog de fotos sencillo, con sistema de login y autenticacion de cuenta </p>
+    <h2> Publicaciones: </h2>
+    <ul class="ul-group">
+        {% for publicacion in publicaciones %}
+            <li class="list-group"> 
+                <a href="{% url 'detalles_publicacion' publicacion.id %}">
+                    {{publicacion.autor}} - {{publicacion.fecha}}    
+                </a>    
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}

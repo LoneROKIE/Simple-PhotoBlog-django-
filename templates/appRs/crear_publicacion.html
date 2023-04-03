@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/crearPublicacion.css">
+    <title>Crear Publicacion</title>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav id="nav-principal"> 
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'perfil' %}">Perfil</a></li> 
+          <li><a href="{% url 'crear_publicacion' %}">Crear Publicacion</a></li>
+          <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesion</a></li>
+        </nav>
+      </div>
+    
+    
+    
+
+    <div class="title-container">
+        <h1>Crear Publicacion</h1>
+      </div>
+      
+      <div class="message-container">
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      
+      <div class="form-container">
+        <form action="{% url 'crear_publicacion' %}" method="POST" enctype="multipart/form-data" >
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="submit-button">Subir</button>
+        </form>
+      </div>
+      
+
+
+</body>
+</html>

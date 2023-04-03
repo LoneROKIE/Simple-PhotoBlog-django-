@@ -1,0 +1,29 @@
+{% comment %} muestra las publicaciones {% endcomment %}
+
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/detallesPublicaciones.css">
+<div class="nav-container">
+    <nav id="nav-principal"> 
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'perfil' %}">Perfil</a></li> 
+      <li><a href="{% url 'crear_publicacion' %}">Crear Publicacion</a></li>
+      <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesion</a></li>
+    </nav>
+  </div>
+
+  <div class="publicacion-container">
+    <p>Publicacion de: <strong>{{ publicacion.autor }}</strong></p>
+    <p>{{ publicacion.fecha }}</p>
+    {% if publicacion.imagen %}
+    <img src={{ publicacion.imagen.url }} alt={{ publicacion.descripcion }} class="publicacion-imagen">
+    {% endif %}
+    <p>{{ publicacion.descripcion }}</p>
+  </div>
+  
+
+
+
+
+{% endblock %}
